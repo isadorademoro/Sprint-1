@@ -1,30 +1,87 @@
+```html
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MatchPoint - Entrar</title>
-    <link rel="stylesheet" href="estilo.css">
+    <title>Editar perfil - MatchPoint</title>
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
 </head>
-<body>
-    <a class="inicio" href="#">Início</a>
+
+<body class="editar-usuario">
+
+    <a href="{% url 'login' %}" class="inicio">← Voltar</a>
 
     <main class="centro">
-        <h1 class="titulo">Bem-Vindo! Bora Jogar?</h1>
+        <h1 class="titulo">MatchPoint</h1>
 
-        <form class="cartao" method="post">
-            <h2>Entrar</h2>
+        <form class="cartao" action="#" method="post">
+            {% csrf_token %}
 
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
+            <h2>Editar perfil</h2>
 
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" required>
+            <p class="texto">
+                Atualize suas informações no MatchPoint.
+            </p>
 
-            <button type="submit" class="botao">Entrar</button>
+            <div class="campo">
+                <label for="nome">Nome completo</label>
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    autocomplete="name"
+                    required
+                >
+            </div>
 
-            <p class="rodape">ainda não tem conta? <a class="link" href="#">criar agora</a></p>
+            <div class="campo">
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="foto">Foto de perfil (URL)</label>
+                <input
+                    type="url"
+                    id="foto"
+                    name="foto"
+                    placeholder="https://exemplo.com/foto.jpg"
+                >
+            </div>
+
+            <div class="campo">
+                <label for="senha">Nova senha</label>
+                <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Deixe vazio para manter a atual"
+                    autocomplete="new-password"
+                >
+            </div>
+
+            <div class="botoes">
+                <button type="submit" class="botao">
+                    Salvar alterações
+                </button>
+
+                <a href="{% url 'login' %}" class="botao botao-cancelar">
+                    Cancelar
+                </a>
+            </div>
         </form>
     </main>
+
 </body>
 </html>
+```
