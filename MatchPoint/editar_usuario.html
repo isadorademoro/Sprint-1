@@ -1,21 +1,24 @@
-
+```html
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar perfil - MatchPoint</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
 </head>
 
 <body class="editar-usuario">
 
-    <a href="login.html" class="inicio">← Voltar</a>
+    <a href="{% url 'login' %}" class="inicio">← Voltar</a>
 
     <main class="centro">
         <h1 class="titulo">MatchPoint</h1>
 
         <form class="cartao" action="#" method="post">
+            {% csrf_token %}
+
             <h2>Editar perfil</h2>
 
             <p class="texto">
@@ -67,15 +70,18 @@
                 >
             </div>
 
-            <button type="submit" class="botao">
-                Salvar alterações
-            </button>
+            <div class="botoes">
+                <button type="submit" class="botao">
+                    Salvar alterações
+                </button>
 
-            <a href="login.html" class="botao botao-cancelar">
-                Cancelar
-            </a>
+                <a href="{% url 'login' %}" class="botao botao-cancelar">
+                    Cancelar
+                </a>
+            </div>
         </form>
     </main>
 
 </body>
 </html>
+```
