@@ -38,7 +38,6 @@ Navegue pelas telas do protótipo para conhecer a proposta visual e as funcional
 
 ![Telas do protótipo MatchPoint](imagens/telas-prototipo.png)
 
-*Substitua esta imagem por capturas de tela reais das principais telas do protótipo.*
 
 ### 3. Conheça a proposta de conexão entre pessoas
 
@@ -46,7 +45,7 @@ A proposta do MatchPoint é aproximar pessoas que compartilham o interesse em pr
 
 ![Fluxo de conexão do MatchPoint](imagens/fluxo-conexao.png)
 
-*Substitua esta imagem por uma captura real da tela ou do fluxo correspondente, caso esteja disponível no protótipo.*
+
 
 ## Tecnologias e recursos
 
